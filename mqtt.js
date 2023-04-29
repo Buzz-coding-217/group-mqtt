@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const SCD = require('./models/SCD');
 const Soil = require('./models/soil');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 
 mongoose.connect('mongodb+srv://mushroom:monitor@mushroom.toqpt0l.mongodb.net/Devices', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -13,7 +12,6 @@ const port = 7001;
 const app = express();
 app.use(express.static('public'));
 
-app.use(cors());
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
